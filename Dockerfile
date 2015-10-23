@@ -19,6 +19,7 @@ ENV STATSD_BACKENDS [\"./backends/graphite\"]
 ENV STATSD_FLUSHINTERVAL 10000
 
 COPY config.js /opt/statsd/config.js
-EXPOSE 8125
+EXPOSE 8125/udp
+EXPOSE 8126/tcp
 
 CMD node /opt/statsd/stats.js /opt/statsd/config.js
